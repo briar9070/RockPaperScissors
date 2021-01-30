@@ -6,9 +6,59 @@
 </head>
 <body>
   <script>
-   
+      function computerPlay () {
+        compNum = Math.random();
+        if (compNum >= 0 && compNum <0.33) {
+            return compChoice = "rock"
+        } 
+        else if (compNum >= 0.33 && compNum <0.66) {
+            return compChoice = "scissors"
+        } 
+        else return compChoice = "paper"
+      }
+      let computerChoice = computerPlay();
+      
+      let playerChoiceBase = String(prompt("Do you choose Rock, Paper, or Scissors: "));
+      
+      let playerChoice = playerChoiceBase.toUpperCase();
+      
+      if (playerChoice == "ROCK" && computerChoice == "rock") {
+          alert("That's a draw! You both chose Rock");
+      }
+      else if (playerChoice == "SCISSORS" && computerChoice == "scissors") {
+          alert("That's a draw! You both chose Scissors");
+      }
+      else if (playerChoice == "PAPER" && computerChoice == "paper") {
+          alert("That's a draw! You both chose Paper");
+      }
+      else if (playerChoice == "PAPER" && computerChoice == "scissors") {
+          alert("That's a loss! Scissors beats Paper");
+      }
+      else if (playerChoice == "PAPER" && computerChoice == "rock") {
+          alert("You win! Paper beats Rock");
+      }
+      else if (playerChoice == "SCISSORS" && computerChoice == "rock") {
+          alert("That's a loss! Rock beats Scissors");
+      }
+      else if (playerChoice == "SCISSORS" && computerChoice == "paper") {
+          alert("You win! Scissors beats Paper");
+      }
+      else if (playerChoice == "ROCK" && computerChoice == "paper") {
+          alert("That's a loss! Paper beats Rock");
+      }
+      else if (playerChoice == "ROCK" && computerChoice == "sscissors") {
+          alert("You win! Rock beats Scissors");
+      }
+      else {alert("I don't know what went wrong");}
+   /*
+      computer randomly choose one of three options
+      ask player for their choice
+      compare player choice to computer choice
+        IF (player === "rock" && computerChoice === "Rock"){
+            return draw
+        }
 
-   }
+   */
 
 
   </script>
