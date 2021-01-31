@@ -1,0 +1,110 @@
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Rock Paper Scissors</title>
+      <meta charset="UTF-8"/>
+    </head>
+    <body>
+      <script>
+          function computerPlay () {
+            compNum = Math.random();
+            if (compNum >= 0 && compNum <0.33) {
+                return compChoice = "rock"
+            } 
+            else if (compNum >= 0.33 && compNum <0.66) {
+                return compChoice = "scissors"
+            } 
+            else return compChoice = "paper"
+          }
+          let playerScore = 0;
+          let compScore = 0;
+
+          let gameRound = parseInt(prompt("How many round do you want to play?"))
+          
+          let i = 1;
+          while ( i <= gameRound) {
+
+                let computerChoice = computerPlay();
+                
+                let playerChoiceBase = String(prompt("Do you choose Rock, Paper, or Scissors: "));
+                
+                let playerChoice = playerChoiceBase.toUpperCase();
+                
+                if (playerChoice == "ROCK" && computerChoice == "rock") {
+                    alert("That's a draw! You both chose Rock");
+                    console.log(`The score is your score: ${playerScore} computer score: ${compScore}`);
+                    i++;
+                }
+                else if (playerChoice == "SCISSORS" && computerChoice == "scissors") {
+                    alert("That's a draw! You both chose Scissors");
+                    console.log(`The score is your score: ${playerScore} computer score: ${compScore}`);
+                    i++;
+                }
+                else if (playerChoice == "PAPER" && computerChoice == "paper") {
+                    alert("That's a draw! You both chose Paper");
+                    console.log(`The score is your score: ${playerScore} computer score: ${compScore}`);
+                    i++;
+                }
+                else if (playerChoice == "PAPER" && computerChoice == "scissors") {
+                    alert("That's a loss! Scissors beats Paper");
+                        compScore += 1;
+                        console.log(`The score is your score: ${playerScore} computer score: ${compScore}`);
+                        i++;
+                }
+                else if (playerChoice == "PAPER" && computerChoice == "rock") {
+                    alert("You win! Paper beats Rock");
+                    playerScore += 1;
+                    console.log(`The score is your score: ${playerScore} computer score: ${compScore}`);
+                    i++;
+                }
+                else if (playerChoice == "SCISSORS" && computerChoice == "rock") {
+                    alert("That's a loss! Rock beats Scissors");
+                    compScore += 1;
+                    console.log(`The score is your score: ${playerScore} computer score: ${compScore}`);
+                    i++;
+                }
+                else if (playerChoice == "SCISSORS" && computerChoice == "paper") {
+                    alert("You win! Scissors beats Paper");
+                    playerScore += 1;
+                    console.log(`The score is your score: ${playerScore} computer score: ${compScore}`);
+                    i++;
+                }
+                else if (playerChoice == "ROCK" && computerChoice == "paper") {
+                    alert("That's a loss! Paper beats Rock");
+                    compScore += 1;
+                    console.log(`The score is your score: ${playerScore} computer score: ${compScore}`);
+                    i++;
+                }
+                else if (playerChoice == "ROCK" && computerChoice == "scissors") {
+                    alert("You win! Rock beats Scissors");
+                    playerScore += 1;
+                    console.log(`The score is your score: ${playerScore} computer score: ${compScore}`);
+                    i++;
+                }
+                else {alert("I don't know what went wrong");}
+
+        }
+
+        if (compScore === playerScore) {
+            alert("You both drew this game!");
+        }
+        else if (compScore < playerScore) {
+            alert("Well done! You won the game!");
+        }
+        else alert("You lost the game!");
+       /*
+        ask player how many rounds they want to play. playerRound
+        Enter game loop. counter limit defined by playerRound
+            initiate previous game code (need to add a plus one to playerScore or compScore to the old code)
+            console log the current score
+            return the compScore and playerScore?
+            counter ++
+        one loop is completed, compare the scores (in an if statement) and alert the winner
+        */
+    
+    
+      </script>
+    </body>
+    </html>
